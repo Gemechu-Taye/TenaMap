@@ -8,10 +8,12 @@ We have used this data to power our maps and reporting tracking the outbreak, an
 TenaMap time series listing confirmed cases, reported deaths and reported recoveries, confirmed tested cases of Coronavirus infection
 confirmed death, test number, the number of people who have reportedly died while sick with Coronavirus, the number of people who have reportedly recovered from it and so... 
 
-This Health map includes time series data tracking the number of people affected by COVID-19 worldwide and in Ethiopia, including:
+This Health map includes time series data tracking the number of people affected by COVID-19 worldwide and in Ethiopia.
 
 
 Contact Us
 If you have questions about the data or licensing conditions, please contact me:
 
 geme.t07@gmail.com
+twitter.com/realgemechutaye
+facebook.com/Gemechu.taye07/
