@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="tenaMap" />
+    <title>Tena Map | Coronavirus Case Dashboard </title>
+
+<meta name="google-site-verification" content="Tena map (የጤና ካርታ) is a project dedicated to support the Ethiopian people during the Covid19 pandemic." />
+<meta property="og:image" content="https://scontent.fadd1-1.fna.fbcdn.net/v/t1.0-0/p640x640/90629076_220956312604782_4898902442994827264_o.jpg?_nc_cat=108&_nc_sid=dd9801&_nc_ohc=CgwhslMfdU0AX8lbQiT&_nc_ht=scontent.fadd1-1.fna&_nc_tp=6&oh=3816b527ba77e801672184a1a96abaca&oe=5E988408" />
+<meta property="og:image:type" content="image/jpg">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="author" content="tena Map" />
+<meta name="description" content="tena map is a project dedicated to support the Ethiopian people during the Covid19 pandemic.">
+
+<meta property="og:url" content="https://tenamap.engethiopia.org/">
+<meta property="og:title" content="tena Map">
+<meta property="og:description" content="Tena map (የጤና ካርታ) is a project dedicated to support the Ethiopian people during the Covid19 pandemic.">
+<meta property="og:image" content="https://scontent.fadd1-1.fna.fbcdn.net/v/t1.0-0/p640x640/90629076_220956312604782_4898902442994827264_o.jpg?_nc_cat=108&_nc_sid=dd9801&_nc_ohc=CgwhslMfdU0AX8lbQiT&_nc_ht=scontent.fadd1-1.fna&_nc_tp=6&oh=3816b527ba77e801672184a1a96abaca&oe=5E988408">
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://tenamap.engethiopia.org/">
+<meta property="twitter:title" content="tena Map">
+<meta property="twitter:description" content="Tena map (የጤና ካርታ) is a project dedicated to support the Ethiopian people during the Covid19 pandemic.">
+<meta property="twitter:image" content="https://scontent.fadd1-1.fna.fbcdn.net/v/t1.0-0/p640x640/90629076_220956312604782_4898902442994827264_o.jpg?_nc_cat=108&_nc_sid=dd9801&_nc_ohc=CgwhslMfdU0AX8lbQiT&_nc_ht=scontent.fadd1-1.fna&_nc_tp=6&oh=3816b527ba77e801672184a1a96abaca&oe=5E988408">
+
+
+
+
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<link rel='stylesheet' id='oceanwp-style-css'  href='wp-content/uploads/oceanwp/main-styleef6d.css?ver=1.8.2' />
+
+<style type="text/css">
+.background-image-page-header-overlay{opacity:0.7}.page-header{background-color:#15121f;background-image:url( wp-content/uploads/2020/04/coronavirus-comet-header-dm-scaled.jpg) !important;height:590px}/* General CSS */table th,table td,hr,.content-area,body.content-left-sidebar #content-wrap .content-area,.content-left-sidebar .content-area,#top-bar-wrap,#site-header,#site-header.top-header #search-toggle,.dropdown-menu ul li,.centered-minimal-page-header,.blog-entry.post,.blog-entry.grid-entry .blog-entry-inner,.blog-entry.thumbnail-entry .blog-entry-bottom,.single-post .entry-title,.single .entry-share-wrap .entry-share,.single .entry-share,.single .entry-share ul li a,.single nav.post-navigation,.single nav.post-navigation .nav-links .nav-previous,#author-bio,#author-bio .author-bio-avatar,#author-bio .author-bio-social li a,#related-posts,#comments,.comment-body,#respond #cancel-comment-reply-link,#blog-entries .type-page,.page-numbers a,.page-numbers span:not(.elementor-screen-only),.page-links span,body #wp-calendar caption,body #wp-calendar th,body #wp-calendar tbody,body .contact-info-widget.default i,body .contact-info-widget.big-icons i,body .posts-thumbnails-widget li,body .tagcloud a{border-color:rgba(10,10,10,0)}body,.has-parallax-footer:not(.separate-layout) #main{background-color:#050311}body{background-position:center center}body{background-attachment:fixed}body{background-repeat:no-repeat}body{background-size:cover}a{color:#13aff0}a:hover{color:#5fc4ef}.container{width:1370px}.page-header,.has-transparent-header .page-header{padding:330px 0 30px 0}.page-header .page-header-title,.page-header.background-image-page-header .page-header-title{color:#ffffff}/* Header CSS */#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner,.after-header-content .after-header-content-inner{height:75px}#site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a,.after-header-content-inner >a{line-height:75px}#site-header.has-header-media .overlay-header-media{background-color:rgba(0,0,0,0.5)}#site-logo #site-logo-inner a img,#site-header.center-header #site-navigation-wrap .middle-site-logo a img{max-width:50px}#site-header #site-logo #site-logo-inner a img,#site-header.center-header #site-navigation-wrap .middle-site-logo a img{max-height:50px}#site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close{color:#ffffff}.mobile-menu .hamburger-inner,.mobile-menu .hamburger-inner::before,.mobile-menu .hamburger-inner::after{background-color:#ffffff}a.sidr-class-toggle-sidr-close{background-color:#000000}#sidr,#mobile-dropdown{background-color:#000000}body .sidr a,body .sidr-class-dropdown-toggle,#mobile-dropdown ul li a,#mobile-dropdown ul li a .dropdown-toggle,#mobile-fullscreen ul li a,#mobile-fullscreen .oceanwp-social-menu.simple-social ul li a{color:#ffffff}#mobile-fullscreen a.close .close-icon-inner,#mobile-fullscreen a.close .close-icon-inner::after{background-color:#ffffff}.sidr-class-dropdown-menu ul,#mobile-dropdown ul li ul,#mobile-fullscreen ul ul.sub-menu{background-color:rgba(237,237,237,0.02)}body .sidr-class-mobile-searchform input,body .sidr-class-mobile-searchform input:focus,#mobile-dropdown #mobile-menu-search form input,#mobile-fullscreen #mobile-search input,#mobile-fullscreen #mobile-search label{color:#3d3d3d}/* Sidebar CSS */.widget-title{margin-bottom:21px}/* Footer Widgets CSS */#footer-widgets{padding:75px 0 100px 0}#footer-widgets .footer-box a,#footer-widgets a{color:#13aff0}#footer-widgets .footer-box a:hover,#footer-widgets a:hover{color:#ffffff}/* Sticky Header CSS */.is-sticky #site-header.shrink-header #site-logo #site-logo-inner,.is-sticky #site-header.shrink-header .oceanwp-social-menu .social-menu-inner,.is-sticky #site-header.shrink-header.full_screen-header .menu-bar-inner,.after-header-content .after-header-content-inner{height:60px}.is-sticky #site-header.shrink-header #site-navigation-wrap .dropdown-menu >li >a,.is-sticky #site-header.shrink-header .oceanwp-mobile-menu-icon a,.after-header-content .after-header-content-inner >a,.after-header-content .after-header-content-inner >div >a{line-height:60px}.is-sticky #site-header,.ocean-sticky-top-bar-holder.is-sticky #top-bar-wrap,.is-sticky .header-top{opacity:1}.is-sticky #site-header,.is-sticky #searchform-header-replace{background-color:#15121f!important}/* Typography CSS */body{font-family:Montserrat;font-weight:500;font-size:15px;color:#f5f4fc}h2{font-size:26px;color:#42d0ff}h3{color:#9c9c9c}#site-navigation-wrap .dropdown-menu >li >a,#site-header.full_screen-header .fs-dropdown-menu >li >a,#site-header.top-header #site-navigation-wrap .dropdown-menu >li >a,#site-header.center-header #site-navigation-wrap .dropdown-menu >li >a,#site-header.medium-header #site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a{font-size:16px;letter-spacing:.3px}.page-header .page-header-title,.page-header.background-image-page-header .page-header-title{line-height:1.6}.page-header .page-subheading{font-weight:300;font-size:16px;line-height:1.7}.sidebar-box .widget-title{font-weight:600;font-size:15px;color:#ffffff}
+</style>
+
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="">
+                                <span>Tena Map</span></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-tachometer-alt"></i></span>
+                                        <a class="nav-link" href="index.html"> Dashboard </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-layer-group"></i></span>
+                                        <a class="nav-link" href="widgets.html">Widget</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <span><i class="fas fa-chart-area"></i></span>
+                                        <a class="nav-link" href="charts.html">Charts</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <span><i class="fas fa-globe-europe"></i></span>
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                            Continent
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="world.html">World</a>
+                                            <a class="dropdown-item" href="asia.html">Asia</a>
+                                            <a class="dropdown-item" href="europe.html">Europe</a>
+                                            <a class="dropdown-item" href="africa.html">Africa</a>
+                                            <a class="dropdown-item" href="australia.html">Australia</a>
+                                            <a class="dropdown-item" href="south-america.html">South America</a>
+                                            <a class="dropdown-item" href="north-america.html">North America</a>
+                                        </div>
+                                    </li>
+									<li class="nav-item">
+                                        <span><i class="fas fa fa-cog"></i></span>
+                                        <a class="nav-link" href="aboutus.html"> About Us </a>
+                                    </li>
+									<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('By Me a Coffee', '#29abe0', 'K3K81OAWG');kofiwidget2.draw();</script>
+
+							  </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+<header class="page-header background-image-page-header">
+
+	<div class="container clr page-header-inner">
+
+			<h1 class="page-header-title clr" itemprop="headline">Tena map (የጤና ካርታ) - to inform Ethiopian People in the situation about Coronavirus pandemic. </h1>
+
+	<div class="clr page-subheading">Tena map (የጤና ካርታ) is a project dedicated to support the Ethiopian people during the Covid19 pandemic.</div><!-- .page-subheading -->
+
+	</div><!-- .page-header-inner -->
+
+<span class="background-image-page-header-overlay"></span>
+
+</header><!-- .page-header -->
+
+
+
+
+
+
+
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3 update-time">
+                            <span class="stats-taken mr-2">Last Update: </span>
+                            <strong id="stat-taken" class="text-primary"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-5 col-lg-12">
+                        <div class="world-statistics">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-1">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Total Cases</h5>
+                                            <h2 id="total_cases"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-9">
+                                            <i class="fas fa-procedures"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Total Death</h5>
+                                            <h2 id="total_deaths"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-4">
+                                            <i class="fas fa-child"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Total Recovered</h5>
+                                            <h2 id="total_recovered"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-3">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        <div>
+                                            <h5>New Cases</h5>
+                                            <h2 id="new_cases"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-widget">
+                                        <div class="icon gradient-12">
+                                            <i class="fas fa-bed"></i>
+                                        </div>
+                                        <div>
+                                            <h5>New Death</h5>
+                                            <h2 id="new_deaths"></h2>
+                                        </div>
+                                    </div>
+                                    <div class="world-widget">
+                                        <div class="icon gradient-5">
+                                            <i class="fas fa-medkit"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Helpline</h5>
+                                            <h2>8335 or 952</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col">
+                                    <div class="world-chart mt-3">
+                                        <canvas id="coronaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-12">
+                        <div class="world-map">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="vmap"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center text-center">
+                    <div class="col">
+                        <div class="google-ads-leaderboard">
+                            <img src="images/ads/ads1.jpg" alt="" class="img-fluid">
+                            <p>Add you ads here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="country-statistics">
+                            <h4>Top Cases</h4>
+                            <ul id="country_cases" class="alt-amin">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="country-statistics">
+                            <h4>Today Cases</h4>
+                            <ul id="country_todayCases" class="alt-blue">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="country-statistics">
+                            <h4>Top Deaths</h4>
+                            <ul id="country_deaths" class="alt-red">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="country-statistics">
+                            <h4>Today Death</h4>
+                            <ul id="country_todayDeath" class="alt-orange">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="country-statistics">
+                            <h4>Top Actived</h4>
+                            <ul id="country_active" class="alt-frost">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="country-statistics">
+                            <h4>Top Recovered</h4>
+                            <ul id="country_recovered" class="alt-green">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center text-center">
+                    <div class="col">
+                        <div class="google-ads-leaderboard">
+                            <img src="images/ads/ads2.jpg" alt="" class="img-fluid">
+                            <p>Add you ads here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-3">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">WHO Latest News</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul id="news"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">WHO Latest Situation</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul id="situation"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">World Case</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="all-country table-responsive">
+                                    <table id="world_table" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:30px">Serial</th>
+                                                <th>Flag</th>
+                                                <th style="width:200px">Country</th>
+                                                <th>Cases</th>
+                                                <th>New Cases</th>
+                                                <th>Deaths</th>
+                                                <th>New Deaths</th>
+                                                <th>Recovered</th>
+                                                <th>Active</th>
+                                                <th>Critical</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-5">
+                            <div class="card-header">
+                                <h4 class="card-title">Region Case</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="all-region table-responsive">
+                                    <table id="region_table" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:200px">Region</th>
+                                                <th>Cases</th>
+                                                <th>New Cases</th>
+                                                <th>Deaths</th>
+                                                <th>New Deaths</th>
+                                                <th>Recovered</th>
+                                                <th>Active</th>
+                                                <th>Critical</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+		<div float:right>
+		<a class="twitter-timeline" data-width="375" data-height="475" data-theme="dark" href="https://twitter.com/lia_tadesse?ref_src=twsrc%5Etfw">Tweets by lia_tadesse</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+
+		<div float:left>
+		<a class="twitter-timeline" data-width="375" data-height="475" data-theme="dark" href="https://twitter.com/FMoHealth?ref_src=twsrc%5Etfw">Tweets by FMoHealth</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+		<div float:center>
+		<a class="twitter-timeline" data-width="375" data-height="475" data-theme="dark" href="https://twitter.com/WHO?ref_src=twsrc%5Etfw">Tweets by WHO</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+
+
+
+
+
+
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="copy_right">
+                            Copyright © 2020 TenaMap - Integrated Rapid Response Task Force Platform (IRRTFP) - All Rights Reserved.
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6 text-lg-right text-center">
+                        <div class="social">
+                            <a href="https://www.Telegram.com/engethiopia"><i class="fab fa-Telegram"></i></a>
+                            <a href="https://twitter.com/next_ethiopia"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/engethiopia"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--removeIf(production)-->
+        <!--**********************************
+            Right sidebar start
+        ***********************************-->
+        <div class="sidebar-right">
+            <a class="sidebar-right-trigger" href="javascript:void(0)">
+                <span><i class="fa fa-cog fa-spin"></i></span>
+            </a>
+            <div class="sidebar-right-inner">
+                <div class="admin-settings">
+                    <div class="opt-header-color">
+                        <p>Background Color</p>
+                        <div>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_1" class="filled-in chk-col-primary"
+                                    id="header_color_1">
+                                <label for="header_color_1"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_2" class="filled-in chk-col-primary"
+                                    id="header_color_2">
+                                <label for="header_color_2"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_3" class="filled-in chk-col-primary"
+                                    id="header_color_3">
+                                <label for="header_color_3"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_4" class="filled-in chk-col-primary"
+                                    id="header_color_4">
+                                <label for="header_color_4"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_5" class="filled-in chk-col-primary"
+                                    id="header_color_5">
+                                <label for="header_color_5"></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="header_bg" value="color_6" class="filled-in chk-col-primary"
+                                    id="header_color_6">
+                                <label for="header_color_6"></label>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Direction</p>
+                        <select class="form-control" name="theme_direction" id="theme_direction">
+                            <option value="ltr">LTR</option>
+                            <option value="rtl">RTL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Right sidebar end
+        ***********************************-->
+        <!--endRemoveIf(production)-->
+
+
+    </div>
+
+
+
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script src='vendor/fixed-header-table/jquery.fixedheadertable.min.html'></script>
+    <script src="js/plugins/fixedheadertable-init.js"></script>
+    <script src='vendor/chartjs/Chart.bundle.min.js'></script>
+
+
+    <script src="vendor/vectormap/jquery.vmap.min.js"></script>
+    <script src="vendor/vectormap/jquery.vmap.world.js"></script>
+
+    <script src="js/world/vectormap-world.js"></script>
+
+    <script src="vendor/datatable/jquery.dataTables.min.js"></script>
+    <script src="js/world/datatable.js"></script>
+
+    <script src="js/world/dashboard.js"></script>
+    <script src="js/world/chart.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <script src="js/settings.js"></script>
+    <script src="js/quixnav-init.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "region-data.csv",
+            dataType: "text",
+            success: function(data) {processData(data);}
+        });
+        function processData(allText) {
+            var allTextLines = allText.split(/\r\n|\n/);
+            var headers = allTextLines[0].split(',');
+            var lines = [];
+
+            for (var i=1; i<allTextLines.length; i++) {
+                var data = allTextLines[i].split(',');
+                if (data.length == headers.length) {
+
+                    var myObj = {};
+                    for (var j=0; j<headers.length; j++) {
+                        myObj[headers[j]] = data[j]
+                    }
+                    lines.push(myObj);
+                }
+            }
+            lines.forEach(function(item) {
+                $('#region_table tbody').append(`
+                    <tr>
+                        <td>${item.region}</td>
+                        <td>${item.cases}</td>
+                        <td>${item.newCases}</td>
+                        <td>${item.deaths}</td>
+                        <td>${item.newDeaths}</td>
+                        <td>${item.recovered}</td>
+                        <td>${item.active}</td>
+                        <td>${item.critical}</td>
+                    </tr>
+                `);
+            });
+            console.log(lines);
+        }
+    </script>
+</body>
+
+</html>
