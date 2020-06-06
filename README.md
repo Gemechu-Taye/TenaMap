@@ -10,3 +10,11 @@ confirmed death, test number, the number of people who have reportedly died whil
 
 This Health map includes time series data tracking the number of people affected by COVID-19 worldwide and in Ethiopia.
 
+
+
+Contact Me
+If you have questions about the data or licensing conditions, please contact me:
+
+geme.t07@gmail.com
+twitter.com/realgemechutaye
+facebook.com/Gemechu.taye07/
