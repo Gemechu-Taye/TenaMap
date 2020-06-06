@@ -323,6 +323,23 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-xl-12 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Totals</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <h1 id="totalconfirmed" class="my-0 text-success"></h1>
+                                        <p class="text-success"><strong>Total Confirmed</strong></p>
+                                        <h1 id="totalcritical" class="my-0 text-warning"></h1>
+                                        <p class="text-warning"><strong>Total Critical</strong></p>
+                                        <h1 id="totalrecovered" class="my-0 text-danger"></h1>
+                                        <p class="text-danger"><strong>Total Recovered</strong></p>
+                                        <h1 id="totalactive" class="my-0 text-info"></h1>
+                                        <p class="text-info"><strong>Total Active</strong></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -532,21 +549,34 @@
                     lines.push(myObj);
                 }
             }
+            
+            var totalConfirmed = 0;
+            var totalCritical = 0;
+            var totalRecovered = 0;
+            var totalActive = 0;
             lines.forEach(function(item) {
                 $('#region_table tbody').append(`
                     <tr>
                         <td>${item.region}</td>
-                        <td>${item.cases}</td>
-                        <td>${item.newCases}</td>
-                        <td>${item.deaths}</td>
-                        <td>${item.newDeaths}</td>
-                        <td>${item.recovered}</td>
-                        <td>${item.active}</td>
-                        <td>${item.critical}</td>
+                        <td class="text-success">${item.cases}</td>
+                        <td class="text-success">${item.newCases}</td>
+                        <td class="text-danger">${item.deaths}</td>
+                        <td class="text-danger">${item.newDeaths}</td>
+                        <td class="text-info">${item.recovered}</td>
+                        <td class="text-warning">${item.active}</td>
+                        <td class="text-warning">${item.critical}</td>
                     </tr>
                 `);
+                totalConfirmed += parseInt(item.cases);
+                totalCritical += parseInt(item.critical);
+                totalRecovered += parseInt(item.recovered);
+                totalActive += parseInt(item.active);
             });
             console.log(lines);
+            $('#totalconfirmed').html(totalConfirmed);
+            $('#totalcritical').html(totalCritical);
+            $('#totalrecovered').html(totalRecovered);
+            $('#totalactive').html(totalActive);
         }
     </script>
 </body>
