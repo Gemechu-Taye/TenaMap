@@ -1321,13 +1321,32 @@ line-height:1.7}.sidebar-box .widget-title{font-weight:600;font-size:15px;color:
     
     
     <script>
-        $.ajax({
-            type: "GET",
-            url: "region-data.csv",
-            dataType: "text",
-            success: function(data) {processData(data);}
+        var arrCSV = [
+            {id: '#region_table', filename: 'region-data.csv' },
+            {id: '#addis_ababa_table', filename: 'addisababa-data.csv' },
+            {id: '#afar_table', filename: 'afar-data.csv' },
+            {id: '#amhara_table', filename: 'amhara-data.csv' },
+            {id: '#benishangul_gumuz_table', filename: 'benishangul-gumuz-data.csv' },
+            {id: '#harari_table', filename: 'harari-data.csv' },
+            {id: '#gambela_table', filename: 'gambela-data.csv' },
+            {id: '#oromia_table', filename: 'oromia-data.csv' },
+            {id: '#somali_table', filename: 'somali-data.csv' },
+            {id: '#southern_table', filename: 'southern-data.csv' },
+            {id: '#tigray_table', filename: 'tigray-data.csv' },
+            {id: '#dire_dawa_table', filename: 'dire-dawa-data.csv' },
+            {id: '#new_region_table', filename: 'region-data.csv' },
+        ];
+        
+        arrCSV.forEach(function(objCSV) {
+            $.ajax({
+                type: "GET",
+                url: "CaseDate/"+objCSV.filename,
+                dataType: "text",
+                success: function(data) {processData(data, objCSV.id);}
+            });
         });
-        function processData(allText) {
+        
+        function processData(allText, idElement) {
             var allTextLines = allText.split(/\r\n|\n/);
             var headers = allTextLines[0].split(',');
             var lines = [];
@@ -1343,19 +1362,7 @@ line-height:1.7}.sidebar-box .widget-title{font-weight:600;font-size:15px;color:
                     lines.push(myObj);
                 }
             }
-            $('#region_table').DataTable();
-            $('#addis_ababa_table').DataTable();
-            $('#afar_table').DataTable();
-            $('#amhara_table').DataTable();
-            $('#benishangul_gumuz_table').DataTable();
-            $('#harari_table').DataTable();
-            $('#gambela_table').DataTable();
-            $('#oromia_table').DataTable();
-            $('#somali_table').DataTable();
-            $('#southern_table').DataTable();
-            $('#tigray_table').DataTable();
-            $('#dire_dawa_table').DataTable();
-            $('#new_region_table').DataTable();
+            $(idElement).DataTable();
             // #myInput is a <input type="text"> element
             $('#myInput').on( 'keyup', function () {
                 table.search( this.value ).draw();
@@ -1369,7 +1376,7 @@ line-height:1.7}.sidebar-box .widget-title{font-weight:600;font-size:15px;color:
             var totaltest = 0;
             var nomor = 1;
             lines.forEach(function(item) {
-                $('#region_table tbody').append(`
+                $(idElement+' tbody').append(`
                     <tr>
                         <td>${nomor++}</td>
                         <td><img src="flag/${item.flag}" width="32"></td>
