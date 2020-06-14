@@ -1350,23 +1350,46 @@ line-height:1.7}.sidebar-box .widget-title{font-weight:600;font-size:15px;color:
             var allTextLines = allText.split(/\r\n|\n/);
             var headers = allTextLines[0].split(',');
             var lines = [];
+            var listArr = [];
 
             for (var i=1; i<allTextLines.length; i++) {
                 var data = allTextLines[i].split(',');
                 if (data.length == headers.length) {
 
                     var myObj = {};
+                    var listItem = [];
                     for (var j=0; j<headers.length; j++) {
                         myObj[headers[j]] = data[j]
+                        listItem.push(data[j]);
                     }
                     lines.push(myObj);
+                    listArr.push(listItem);
                 }
             }
-            $(idElement).DataTable();
+            $(idElement).DataTable({
+                data: listArr,
+                columns: [
+                    { title: "Serial" },
+                    { 
+                        title: "Flag", 
+                        render: function(data, type) {
+                            return '<img src="flag/'+data+'" width="32">';
+                        } 
+                    },
+                    { title: "Region" },
+                    { title: "Cases" },
+                    { title: "New Cases" },
+                    { title: "Deaths" },
+                    { title: "New Deaths" },
+                    { title: "Recovered" },
+                    { title: "Active" },
+                    { title: "Critical" }
+                ]
+            });
             // #myInput is a <input type="text"> element
-            $('#myInput').on( 'keyup', function () {
+            /*$('#myInput').on( 'keyup', function () {
                 table.search( this.value ).draw();
-            } );
+            } );*/
 
             var totalnewCases = 0;
             var totalConfirmed = 0;
@@ -1376,7 +1399,7 @@ line-height:1.7}.sidebar-box .widget-title{font-weight:600;font-size:15px;color:
             var totaltest = 0;
             var nomor = 1;
             lines.forEach(function(item) {
-                $(idElement+' tbody').append(`
+                /*$(idElement+' tbody').append(`
                     <tr>
                         <td>${nomor++}</td>
                         <td><img src="flag/${item.flag}" width="32"></td>
@@ -1390,7 +1413,7 @@ line-height:1.7}.sidebar-box .widget-title{font-weight:600;font-size:15px;color:
                         <td class="text-warning">${item.critical}</td>
                         <td class="text-info">${item.test}</td>
                     </tr>
-                `);
+                `);*/
                 totalnewCases += parseInt(item.newCases);
                 totalConfirmed += parseInt(item.cases);
                 totalCritical += parseInt(item.critical);
